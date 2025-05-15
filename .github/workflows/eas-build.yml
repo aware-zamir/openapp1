@@ -1,29 +1,24 @@
 name: EAS Build
 
 on:
-  workflow_dispatch:  # allows manual trigger
+  workflow_dispatch:
   push:
     branches:
-      - main  # runs on push to main
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📁 Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: 🧰 Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: 📦 Install EAS CLI
-        run: npm install -g eas-cli
+      - run: npm install -g eas-cli
 
-      - name: 🔐 Login to EAS with token
-        run: eas login --token ${{ secrets.EXPO_TOKEN }}
-
-      - name: 🚀 Run EAS Build
-        run: eas build --platform android --non-interactive
+      - run: eas build --platform android --non-interactive
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
