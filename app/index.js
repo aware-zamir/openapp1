@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Alert, SafeAreaView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Text } from 'react-native-paper';
 
@@ -69,8 +69,6 @@ export default function App() {
                 {
                     text: "Exit",
                     onPress: () => {
-                        // In a real app, you would use BackHandler.exitApp() for Android
-                        // For web, you might want to close the window or navigate away
                         console.log("App would exit here");
                     }
                 }
@@ -83,12 +81,12 @@ export default function App() {
     };
 
     const CalculatorButton = ({ text, onPress, style }) => (
-        <TouchableOpacity 
+        <TouchableOpacity
             style={[
-                styles.button, 
+                styles.button,
                 style,
                 isDarkMode && styles.darkButton
-            ]} 
+            ]}
             onPress={onPress}
         >
             <Text style={[
@@ -104,24 +102,24 @@ export default function App() {
             isDarkMode && styles.darkContainer
         ]}>
             <View style={styles.header}>
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={styles.headerButton}
                     onPress={() => setShowSettings(!showSettings)}
                 >
-                    <Ionicons 
-                        name="settings-outline" 
-                        size={24} 
-                        color={isDarkMode ? '#fff' : '#000'} 
+                    <Ionicons
+                        name="settings-outline"
+                        size={24}
+                        color={isDarkMode ? '#fff' : '#000'}
                     />
                 </TouchableOpacity>
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={styles.headerButton}
                     onPress={handleExit}
                 >
-                    <Ionicons 
-                        name="close" 
-                        size={24} 
-                        color={isDarkMode ? '#fff' : '#000'} 
+                    <Ionicons
+                        name="close"
+                        size={24}
+                        color={isDarkMode ? '#fff' : '#000'}
                     />
                 </TouchableOpacity>
             </View>
@@ -131,7 +129,7 @@ export default function App() {
                     styles.settingsPanel,
                     isDarkMode && styles.darkSettingsPanel
                 ]}>
-                    <TouchableOpacity 
+                    <TouchableOpacity
                         style={styles.settingItem}
                         onPress={toggleDarkMode}
                     >
@@ -141,10 +139,10 @@ export default function App() {
                         ]}>
                             Dark Mode
                         </Text>
-                        <Ionicons 
-                            name={isDarkMode ? "moon" : "moon-outline"} 
-                            size={24} 
-                            color={isDarkMode ? '#fff' : '#000'} 
+                        <Ionicons
+                            name={isDarkMode ? "moon" : "moon-outline"}
+                            size={24}
+                            color={isDarkMode ? '#fff' : '#000'}
                         />
                     </TouchableOpacity>
                 </View>
@@ -192,10 +190,10 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f0f0f0',
+        backgroundColor: '#E8F0F2',
     },
     darkContainer: {
-        backgroundColor: '#121212',
+        backgroundColor: '#1A202C',
     },
     header: {
         flexDirection: 'row',
@@ -206,18 +204,18 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     settingsPanel: {
-        backgroundColor: '#fff',
-        padding: 15,
+        backgroundColor: '#FFFFFF',
+        padding: 20,
         margin: 10,
-        borderRadius: 10,
-        elevation: 3,
+        borderRadius: 15,
+        elevation: 5,
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 4.65,
     },
     darkSettingsPanel: {
-        backgroundColor: '#1e1e1e',
+        backgroundColor: '#2D3748',
     },
     settingItem: {
         flexDirection: 'row',
@@ -226,28 +224,32 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
     },
     settingText: {
-        fontSize: 16,
-        color: '#000',
+        fontSize: 18,
+        fontWeight: '500',
+        color: '#4A5568',
     },
     darkSettingText: {
-        color: '#fff',
+        color: '#A0AEC0',
     },
     display: {
         flex: 1,
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
         padding: 20,
-        backgroundColor: '#fff',
+        backgroundColor: '#F7FAFC',
+        borderRadius: 15,
+        margin: 10,
     },
     darkDisplay: {
-        backgroundColor: '#1e1e1e',
+        backgroundColor: '#2D3748',
     },
     displayText: {
         fontSize: 48,
-        color: '#000',
+        fontWeight: 'bold',
+        color: '#2D3748',
     },
     darkDisplayText: {
-        color: '#fff',
+        color: '#EDF2F7',
     },
     buttonContainer: {
         flex: 2,
@@ -263,9 +265,9 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#fff',
+        backgroundColor: '#FFFFFF',
         margin: 5,
-        borderRadius: 10,
+        borderRadius: 15,
         elevation: 3,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
@@ -273,22 +275,23 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
     },
     darkButton: {
-        backgroundColor: '#2d2d2d',
+        backgroundColor: '#4A5568',
     },
     buttonText: {
         fontSize: 24,
-        color: '#000',
+        fontWeight: '600',
+        color: '#2D3748',
     },
     darkButtonText: {
-        color: '#fff',
+        color: '#E2E8F0',
     },
     operatorButton: {
-        backgroundColor: '#ff9500',
+        backgroundColor: '#63B3ED',
     },
     clearButton: {
-        backgroundColor: '#ff3b30',
+        backgroundColor: '#F56565',
     },
     equalButton: {
-        backgroundColor: '#4cd964',
+        backgroundColor: '#48BB78',
     },
 });

@@ -42,8 +42,9 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "40b05ea2-a8d3-49fd-8bc6-ab643f1bff9e"
+        "projectId": "3c4cb74f-0de4-4d36-888c-30729e75b9db"
       }
-    }
+    },
+    "owner": "aware-zamir"
   }
 }
