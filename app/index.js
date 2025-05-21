@@ -292,6 +292,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#9CA3AF',
     },
     equalButton: {
-        backgroundColor: '#CBD5E0',
+        backgroundColor: '#4a4848',
     },
 });
