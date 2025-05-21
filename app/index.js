@@ -286,12 +286,12 @@ const styles = StyleSheet.create({
         color: '#E2E8F0',
     },
     operatorButton: {
-        backgroundColor: '#63B3ED',
+        backgroundColor: '#A0AEC0',
     },
     clearButton: {
-        backgroundColor: '#F56565',
+        backgroundColor: '#9CA3AF',
     },
     equalButton: {
-        backgroundColor: '#48BB78',
+        backgroundColor: '#CBD5E0',
     },
 });
